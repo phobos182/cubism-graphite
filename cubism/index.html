@@ -24,14 +24,11 @@ body {
 <script>
 
 var context = cubism.context()
-    .serverDelay(15 * 1000) // allow 30 seconds of collection lag
-    .step(15000) // ten seconds per value
+    .serverDelay(15 * 1000) // allow 15 seconds of collection lag
+    .step(15000) // fifteen seconds per value
     .size(1440); // fetch 1440 values (720p)
 
-var graphite = context.graphite("http://carbon2.klout");
-
-var node_metrics = [
-];
+var graphite = context.graphite("http://graphite");
 
 var api_metrics = [
   graphite.metric("my.graphite.metric1").alias("my_name1"),
